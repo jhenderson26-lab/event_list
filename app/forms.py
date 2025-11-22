@@ -1,9 +1,12 @@
 from django import forms
 from .models import Event
 
-class eventForm(forms.ModelForm):
-    event_name = forms.CharField(label='Event Name', max_length=100)
-    setdate = forms.IntegerField()
+
+class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['event_name', 'setdate',]    
+        fields = ['title', 'set_date']
+        labels = {
+            'title': 'Event Name',
+            'set_date': 'Set Date',
+        }

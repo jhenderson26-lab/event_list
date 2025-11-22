@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Events</h2>
+<ul>
+    {% for e in text %}
+    <li>{{ e.title }} — {{ e.set_date }} (created {{ e.created_at }})</li>
+    {% empty %}
+    <li>No events yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
