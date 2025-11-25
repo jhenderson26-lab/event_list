@@ -4,6 +4,7 @@
 <ul>
     {% for e in text %}
     <li>{{ e.title }} — {{ e.set_date }} (created {{ e.created_at }})</li>
+    <a href="{% url 'delete' e.id %}" class="">Delete</a>
     {% empty %}
     <li>No events yet.</li>
     {% endfor %}
